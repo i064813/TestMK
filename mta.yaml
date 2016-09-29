@@ -19,6 +19,19 @@ modules:
    type: nodejs
    path: nodemk
 
+
+ 
+
+
+ - name: javamk
+   type: java
+   path: javamk
+   requires:
+    - name: hdi-container
+      properties:
+         JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
+
 resources:
  - name: hdi-container
    properties:
